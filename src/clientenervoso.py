@@ -34,11 +34,11 @@ def cliente_nervoso(id_cliente):
         client.close()
 
 if __name__ == "__main__":
-    print("--- INICIANDO ATAQUE DE 10 CLIENTES SIMULTÂNEOS ---")
+    print("--- INICIANDO ATAQUE DE 200 CLIENTES SIMULTÂNEOS ---")
     
     threads = []
-    # Dispara 10 clientes para garantir que a fila estoure
-    for i in range(1, 11):
+    # Dispara 200 clientes para testar alta concorrência
+    for i in range(1, 201):
         t = threading.Thread(target=cliente_nervoso, args=(i,))
         threads.append(t)
         t.start()
